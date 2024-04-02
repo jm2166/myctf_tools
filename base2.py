@@ -110,7 +110,7 @@ def De2Any(num, key):# Decimal To any jinzhi
         ret.append(num)
         ret.reverse()
         return ret
-    print "Wrong In De2Any!"
+    print("Wrong In De2Any!")
 
 
 def base(s):#16 32 36 58 62 64 85 91 92 
@@ -126,12 +126,12 @@ def base(s):#16 32 36 58 62 64 85 91 92
 
             if check(temp):
                 ret.append(i(s))
-                print '\033[1;34;40m[+]\033[1;33;40m %s:%s \033[0;37;40m'%(i.func_name,i(s))
+                print('\033[1;34;40m[+]\033[1;33;40m %s:%s \033[0;37;40m'%(i.__name__,i(s)))
             else:
-                print '[-] %s wrong'%i.func_name
+                print('[-] %s wrong'%i.__name__)
         except:    
-            print '[-] %s wrong'%i.func_name
-    print '\033[0;31;40m-------------------------------------\033[0;37;40m'
+            print('[-] %s wrong'%i.__name__)
+    print('\033[0;31;40m-------------------------------------\033[0;37;40m')
     return ret
     #return [b16decode(s),b32decode(s),b64decode(s),b85decode(s),]
 
@@ -144,7 +144,7 @@ def check(s):
 
 
 if __name__=='__main__':
-    s=raw_input('Input base:')
+    s=input('Input base:')
     ret=[]
     while(1):
         s=base(s)
